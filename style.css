@@ -7,13 +7,17 @@ body {
   padding: 0;
   font-family: "Mulish", sans-serif;
   background-color: #1e1e1e;
-  padding-top: 50px;
 }
 
 .dashboard {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 .dashboard__content {
@@ -77,11 +81,10 @@ body {
   align-items: flex-start;
   justify-content: start;
   flex-direction: column;
+  padding-top: 48px;
 }
 
 label {
-  margin-top: 48px;
-  margin-right: 6px;
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
@@ -89,10 +92,7 @@ label {
   letter-spacing: 0.3px;
   text-transform: uppercase;
   color: #9fa2b4;
-}
-
-input[for="email"] {
-  margin-top: 48px;
+  display: inline-block;
 }
 
 input {
@@ -100,6 +100,7 @@ input {
   border: 1px solid #f0f1f7;
   border-radius: 8px;
   padding: 10px;
+  margin-top: 6px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -107,28 +108,43 @@ input {
 
 input:focus {
   background: #dadbdb;
+  outline: 2px solid green;
 }
 
 span {
   margin-top: 24px;
   margin-bottom: 6px;
+  display: inline-block;
+  align-items: center;
+  justify-content: space-between;
 }
 
-span a {
-  width: 100%;
-  text-align: right;
+.dashboard__form div {
   text-decoration: none;
+  padding-top: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard__form-link {
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 13px;
+  text-align: right;
   letter-spacing: 0.1px;
   color: #9fa2b4;
+  text-decoration: none;
+}
+
+.dashboard__form-link:hover {
+  text-decoration: underline;
 }
 
 button {
   background: #3751ff;
-  box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
   border-radius: 8px;
   font-style: normal;
   font-weight: 600;
@@ -146,6 +162,11 @@ button {
   cursor: pointer;
 }
 
+button:active {
+  transition: all 0.3s ease;
+  color: green;
+}
+
 .dashboard__question {
   font-style: normal;
   font-weight: 400;
@@ -156,7 +177,7 @@ button {
   color: #9fa2b4;
 }
 
-.dashboard__question a {
+.dashboard__sign-up {
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -165,6 +186,10 @@ button {
   letter-spacing: 0.2px;
   color: #3751ff;
   text-decoration: none;
+}
+
+.dashboard__sign-up:hover {
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 425px) {
